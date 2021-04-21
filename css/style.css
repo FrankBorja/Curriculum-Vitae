@@ -511,6 +511,35 @@ img{
     border-radius: 5px;
 }
 
+.about-section .about-img .social-links{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.about-section .about-img .social-links a{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    font-size: 25px;
+    text-align: center;
+    color: var(--text-black-600);
+    margin: 0 4px;
+    border-radius: 50%;
+    transition: all 0.3s ease; 
+}
+
+.about-section .about-img .social-links a i{
+    line-height: 60px;
+}
+
+.about-section .about-img .social-links a::after{
+    border-radius: 50%;
+}
+
+.about-section .about-img .social-links a:hover{
+    color: var(--skin-color);
+}
+
 .about-section .about-info{
     flex: 0 0 50%;
     max-width: 50%;

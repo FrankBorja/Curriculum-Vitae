@@ -16,8 +16,12 @@
                 ,"active");
             // activate new 'tab-item'
             event.target.classList.add("active","outer-shadow");
-        }
+            // deactive existing active 'tab-item'
+            aboutSection.querySelector(".tab-content.active").classList.remove("active");
+            // active new 'tab-content'
+            aboutSection.querySelector(target).classList.add("active");
+          }
     })
-})();
+})();   
 
 

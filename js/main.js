@@ -1,5 +1,36 @@
 
 
+/*--------------- navigation menu ---------------*/
+
+(() =>{
+
+  const hamburgerBtn = document.querySelector(".hamburger-btn"),
+  navMenu = document.querySelector(".nav-menu"),
+  closeBtn = navMenu.querySelector(".close-nav-menu");
+
+  hamburgerBtn.addEventListener("click", showNavMenu);
+  closeBtn.addEventListener("click", hideNavMenu);
+
+  function showNavMenu(){
+    navMenu.classList.add("open");
+    bodyScrollingToggle();
+  }
+
+  function hideNavMenu(){
+    navMenu.classList.remove("open");
+    fadeOutEffect();
+    bodyScrollingToggle();
+  }
+
+  function fadeOutEffect(){
+    document.querySelector(".fade-out-effect").classList.add("active");
+    setTimeout(() =>{
+      document.querySelector(".fade-out-effect").classList.remove("active");
+    },300)
+  }
+
+})();
+
 /*--------------- about section tabs ---------------*/
 
 (() =>{
@@ -183,8 +214,17 @@ function bodyScrollingToggle(){
 
 })();
 
+/*--------------- hide sections except active ---------------*/ 
 
+(() =>{
 
+  const sections = document.querySelectorAll(".section");
+  sections.forEach((section) =>{
+    if(!section.classList.contains("active")){
+      section.classList.add("hide");
+    }
+  })
 
+})();
 
 

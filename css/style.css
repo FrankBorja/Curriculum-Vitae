@@ -274,7 +274,7 @@ img{
     color: var(--skin-color);
 }
 
-.section-hide{
+.section.hide{
     display: none;
 }
 

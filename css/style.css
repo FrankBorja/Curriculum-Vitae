@@ -862,6 +862,24 @@ img{
     margin: 15px 0 0;
 }
 
+.about-section .timeline .timeline-item-inner .btn-01{
+    margin: 10px 10px 0;
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--skin-color);
+    background-color: transparent;
+    line-height: 1.5;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.5s ease;
+    display: inline-block;
+}
+
+.btn-01::after{
+    border-radius: 30px;
+}
+
 /*------------------------- 
     service-section 
 -------------------------*/

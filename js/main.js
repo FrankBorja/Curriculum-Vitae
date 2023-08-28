@@ -277,3 +277,65 @@ window.addEventListener("load", () =>{
 })
 
 
+/*---------- Modo Claro/Oscuro y Temas ----------*/
+const dayNight = document.querySelector(".day-night");
+const body = document.body;
+let isDarkMode = localStorage.getItem("darkMode");
+
+function setDarkMode(isDark) {
+  if (isDark) {
+    body.classList.add("dark");
+    dayNight.querySelector("i").classList.remove("fa-sun");
+    dayNight.querySelector("i").classList.add("fa-sun");
+  } else {
+    body.classList.remove("dark");
+    dayNight.querySelector("i").classList.remove("fa-moon");
+    dayNight.querySelector("i").classList.add("fa-moon");
+  }
+}
+
+dayNight.addEventListener("click", () => {
+  isDarkMode = !isDarkMode; // Toggle the dark mode flag
+  localStorage.setItem("darkMode", isDarkMode); // Save to local storage
+  setDarkMode(isDarkMode);
+});
+
+// When the page loads, set the initial dark mode based on user preference
+if (isDarkMode === "true") {
+  setDarkMode(true);
+} else {
+  setDarkMode(false);
+}
+
+/*---------- Colores del Tema ----------*/
+const alternateStyles = document.querySelectorAll(".alternate-style");
+let selectedStyle = localStorage.getItem("selectedStyle");
+
+function setActivateStyle(color) {
+  alternateStyles.forEach((style) => {
+    if (color === style.getAttribute("title")) {
+      style.removeAttribute("disabled");
+    } else {
+      style.setAttribute("disabled", "true");
+    }
+  });
+}
+
+function setSelectedStyle(color) {
+  localStorage.setItem("selectedStyle", color);
+  selectedStyle = color;
+  setActivateStyle(color);
+}
+
+// Event listener for clicking on a color style
+alternateStyles.forEach((style) => {
+  style.addEventListener("click", () => {
+    const color = style.getAttribute("title");
+    setSelectedStyle(color);
+  });
+});
+
+// When the page loads, set the initial selected style based on user preference
+if (selectedStyle) {
+  setActivateStyle(selectedStyle);
+}

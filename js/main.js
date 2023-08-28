@@ -285,11 +285,11 @@ let isDarkMode = localStorage.getItem("darkMode");
 function setDarkMode(isDark) {
   if (isDark) {
     body.classList.add("dark");
-    dayNight.querySelector("i").classList.remove("fa-sun");
+    dayNight.querySelector("i").classList.remove("fa-moon");
     dayNight.querySelector("i").classList.add("fa-sun");
   } else {
     body.classList.remove("dark");
-    dayNight.querySelector("i").classList.remove("fa-moon");
+    dayNight.querySelector("i").classList.remove("fa-sun");
     dayNight.querySelector("i").classList.add("fa-moon");
   }
 }

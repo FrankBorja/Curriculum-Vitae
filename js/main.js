@@ -267,6 +267,7 @@ function bodyScrollingToggle(){
 
 })();
 
+/*--------------- loader secction ---------------*/ 
 
 window.addEventListener("load", () =>{
   // preloader
